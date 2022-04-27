@@ -892,7 +892,7 @@
     var json = {
       "commenterToken": commenterToken,
       "anonName": anonName,
-      "domain": parent.location.host,
+      "domain": window.location.host,
       "path": pageId,
       "parentHex": id,
       "markdown": markdown,
@@ -1903,7 +1903,7 @@
     emailSubtitle.innerText = i18n("Login with your email address");
     emailButton.innerText = i18n("Continue");
     oauthSubtitle.innerText = i18n("Proceed with social login");
-    ssoSubtitle.innerText = i18n("Proceed with ") + parent.location.host + i18n(" authentication");
+    ssoSubtitle.innerText = i18n("Proceed with ") + window.location.host + i18n(" authentication");
 
     onclick(emailButton, global.passwordAsk, id);
     onenterkey(emailInput, global.nextInput(emailInput, global.passwordAsk), id);
@@ -2191,7 +2191,7 @@
 
     var json = {
       "commenterToken": commenterTokenGet(),
-      "domain": parent.location.host,
+      "domain": window.location.host,
       "path": pageId,
       "attributes": attributes,
     };
@@ -2496,7 +2496,7 @@
     wsUri = wsUri.join(":")
     var conn = new WebSocket(wsUri + "/ws");
     conn.onopen = function () {
-      conn.send(parent.location.host + pageId) // subscribe to this page
+      conn.send(window.location.host + pageId) // subscribe to this page
     }
     conn.onmessage = function () {
       window.document.title = "(*) " + initialTitle;
