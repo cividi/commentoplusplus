@@ -71,7 +71,7 @@
   var origin = "[[[.Origin]]]";
   var cdn = "[[[.CdnPrefix]]]";
   var root = null;
-  var pageId = parent.location.pathname;
+  var pageId = window.document.location.pathname;
   var cssOverride;
   var noFonts;
   var hideDeleted;
