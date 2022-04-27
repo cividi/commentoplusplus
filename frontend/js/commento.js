@@ -462,7 +462,7 @@
   function commentsGet(callback, casualMode) {
     var json = {
       "commenterToken": commenterTokenGet(),
-      "domain": parent.location.host,
+      "domain": window.location.host,
       "path": pageId,
     };
 
